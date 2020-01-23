@@ -61,6 +61,8 @@ class StatisticsSchema(AttrsSchema):
 @attr.s(auto_attribs=True, kw_only=True)
 class Column:
     name: str
+    # NB: This value is required for serialization in GET APIs, but ignored for PUT/POSTs
+    key: Optional[str] = None
     description: Optional[str] = None
     col_type: str
     sort_order: int
@@ -111,6 +113,8 @@ class Table:
     cluster: str
     schema: str
     name: str
+    # NB: This value is required for serialization in GET APIs, but ignored for PUT/POSTs
+    key: Optional[str] = None
     tags: List[Tag] = []
     badges: Optional[List[Tag]] = []
     table_readers: List[Reader] = []
