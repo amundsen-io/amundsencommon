@@ -45,16 +45,16 @@ class WatermarkSchema(AttrsSchema):
 
 
 @attr.s(auto_attribs=True, kw_only=True)
-class Statistics:
+class Stat:
     stat_type: str
     stat_val: Optional[str] = None
     start_epoch: Optional[int] = None
     end_epoch: Optional[int] = None
 
 
-class StatisticsSchema(AttrsSchema):
+class StatSchema(AttrsSchema):
     class Meta:
-        target = Statistics
+        target = Stat
         register_as_scheme = True
 
 
@@ -64,7 +64,7 @@ class Column:
     description: Optional[str] = None
     col_type: str
     sort_order: int
-    stats: List[Statistics] = []
+    stats: List[Stat] = []
 
 
 class ColumnSchema(AttrsSchema):
