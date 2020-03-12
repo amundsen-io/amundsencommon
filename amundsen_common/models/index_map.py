@@ -121,7 +121,7 @@ USER_INDEX_MAP = textwrap.dedent("""
             }
           }
         },
-        "name": {
+        "full_name": {
           "type":"text",
           "analyzer": "simple",
           "fields": {
@@ -143,3 +143,65 @@ USER_INDEX_MAP = textwrap.dedent("""
     }
   }
 }""")
+
+DASHBOARD_INDEX_MAP = textwrap.dedent(
+    """
+    {
+        "mappings":{
+            "dashboard":{
+              "properties": {
+                "dashboard_group": {
+                  "type":"text",
+                  "analyzer": "simple",
+                  "fields": {
+                    "raw": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "dashboard_name": {
+                  "type":"text",
+                  "analyzer": "simple",
+                  "fields": {
+                    "raw": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "description": {
+                  "type":"text",
+                  "analyzer": "simple",
+                  "fields": {
+                    "raw": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "dashboard_group_description": {
+                  "type":"text",
+                  "analyzer": "simple",
+                  "fields": {
+                    "raw": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "product": {
+                  "type":"text",
+                  "analyzer": "simple",
+                  "fields": {
+                    "raw": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "total_usage":{
+                  "type": "long"
+                }
+              }
+            }
+          }
+        }
+
+    """
+)
