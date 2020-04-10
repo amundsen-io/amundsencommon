@@ -8,7 +8,7 @@ from marshmallow_annotations.ext.attrs import AttrsSchema
 class DashboardSummary:
     uri: str = attr.ib()
     cluster: str = attr.ib()
-    group_name: str = attr.ib()
+    group_names: str = attr.ib()
     group_url: str = attr.ib()
     product: str = attr.ib()
     name: str = attr.ib()
