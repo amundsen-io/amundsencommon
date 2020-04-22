@@ -123,6 +123,7 @@ class Table:
     database: str
     cluster: str
     schema: str
+    schema_description: Optional[str] = attr.ib(default=None)
     name: str
     tags: List[Tag] = []
     badges: Optional[List[Tag]] = []
