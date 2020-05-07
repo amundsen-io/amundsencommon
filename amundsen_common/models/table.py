@@ -61,7 +61,8 @@ class StatisticsSchema(AttrsSchema):
 @attr.s(auto_attribs=True, kw_only=True)
 class Column:
     name: str
-    description: Optional[str] = None
+    tags: Optional[List[Tag]] = []
+    badges: Optional[List[Tag]] = []    description: Optional[str] = None
     col_type: str
     sort_order: int
     stats: List[Statistics] = []
