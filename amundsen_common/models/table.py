@@ -62,7 +62,8 @@ class StatisticsSchema(AttrsSchema):
 class Column:
     name: str
     tags: Optional[List[Tag]] = []
-    badges: Optional[List[Tag]] = []    description: Optional[str] = None
+    badges: Optional[List[Tag]] = []
+    description: Optional[str] = None
     col_type: str
     sort_order: int
     stats: List[Statistics] = []
