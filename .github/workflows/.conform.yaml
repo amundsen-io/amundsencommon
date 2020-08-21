@@ -1,0 +1,11 @@
+policies:
+  - type: license
+    spec:
+      skipPaths:
+        - .git/
+        - .build*/
+      includeSuffixes:
+        - .py
+      header: |
+        # Copyright Contributors to the Amundsen project.
+        # SPDX-License-Identifier: Apache-2.0
