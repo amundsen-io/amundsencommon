@@ -36,7 +36,7 @@ class TagSchema(AttrsSchema):
 @attr.s(auto_attribs=True, kw_only=True)
 class Badge:
     badge_name: str = attr.ib()
-    badge_type: str = attr.ib()
+    category: str = attr.ib()
     sentiment: str = attr.ib()
 
 
