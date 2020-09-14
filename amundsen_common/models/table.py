@@ -1,7 +1,7 @@
 # Copyright Contributors to the Amundsen project.
 # SPDX-License-Identifier: Apache-2.0
 
-from typing import List, Optional
+from typing import Any, List, Optional
 
 import attr
 
@@ -152,7 +152,7 @@ class Table:
     schema: str
     name: str
     tags: List[Tag] = []
-    badges: List[Badge] = []
+    badges: List[Any] = []
     table_readers: List[Reader] = []
     description: Optional[str] = None
     columns: List[Column]
