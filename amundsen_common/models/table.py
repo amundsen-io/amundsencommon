@@ -61,26 +61,27 @@ class WatermarkSchema(AttrsSchema):
 
 
 @attr.s(auto_attribs=True, kw_only=True)
-class Statistics:
+class Stat:
     stat_type: str
     stat_val: Optional[str] = None
     start_epoch: Optional[int] = None
     end_epoch: Optional[int] = None
 
 
-class StatisticsSchema(AttrsSchema):
+class StatSchema(AttrsSchema):
     class Meta:
-        target = Statistics
+        target = Stat
         register_as_scheme = True
 
 
 @attr.s(auto_attribs=True, kw_only=True)
 class Column:
     name: str
+    key: Optional[str] = None
     description: Optional[str] = None
     col_type: str
     sort_order: int
-    stats: List[Statistics] = []
+    stats: List[Stat] = []
 
 
 class ColumnSchema(AttrsSchema):
@@ -114,6 +115,7 @@ class SourceSchema(AttrsSchema):
     class Meta:
         target = Source
         register_as_scheme = True
+
 
 @attr.s(auto_attribs=True, kw_only=True)
 class ResourceReport:
@@ -151,6 +153,7 @@ class Table:
     cluster: str
     schema: str
     name: str
+    key: Optional[str] = None
     tags: List[Tag] = []
     badges: List[Badge] = []
     table_readers: List[Reader] = []
