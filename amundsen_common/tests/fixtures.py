@@ -11,6 +11,9 @@ from amundsen_common.models.user import User
 
 
 class Fixtures:
+    """
+    These fixtures are useful for creating test objects. For an example usage, check out tests/tests/test_fixtures.py
+    """
     counter = 1000
 
     @staticmethod
