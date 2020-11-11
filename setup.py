@@ -31,7 +31,7 @@ setup(
         # long as they have a version of pyfoobar equal to or greater than 1.x
         # and less than 2.x installed.
         'flask>=1.0.2',
-        'marshmallow>=2.15.3,<=3.6',
+        'marshmallow>=2.15.3,<3.10',
         ('git+https://www.github.com/hilearn/marshmallow-annotations.git@a7a2dc96932430369bd'
          'ef36555082df990ed9bef#egg=marshmallow-annotations')
     ],
