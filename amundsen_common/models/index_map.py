@@ -19,8 +19,8 @@ TABLE_INDEX_MAP = textwrap.dedent(
           "column_names_normalizer": {
             "type": "custom",
             "filter": ["lowercase"]
-	  }
-	}
+          }
+        }
       }
     },
     "mappings":{
