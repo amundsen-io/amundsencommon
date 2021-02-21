@@ -1,0 +1,30 @@
+# Copyright Contributors to the Amundsen project.
+# SPDX-License-Identifier: Apache-2.0
+
+from typing import Optional, List
+
+import attr
+from marshmallow_annotations.ext.attrs import AttrsSchema
+
+@attr.s(auto_attribs=True, kw_only=True)
+class LineageItem:
+    key: str  # down/upstream table/col/task key
+    level: int  # upstream/downstream distance from current resource
+    source: str  # database this resource is from
+    badges: Optional[List[str]]
+    usage: Optional[int] # statistic to sort lineage items by
+
+class LineageItemSchema(AttrsSchema):
+    target = LineageItem
+    register_as_scheme = True
+
+@attr.s(auto_attribs=True, kw_only=True)
+class Lineage:
+    key: str # current table/col/task key
+    direction: str  # upstream/downstream
+    depth: int # how many levels up/down 0 == all
+    lineage_entities: List[LineageItem]  # list of up/downstream entities
+
+class LineageSchema(AttrsSchema):
+    target = Lineage
+    register_as_scheme = True
