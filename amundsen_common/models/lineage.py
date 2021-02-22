@@ -3,6 +3,8 @@
 
 from typing import Optional, List
 
+from amundsen_common.models.table import Badge
+
 import attr
 from marshmallow_annotations.ext.attrs import AttrsSchema
 
@@ -12,7 +14,7 @@ class LineageItem:
     key: str  # down/upstream table/col/task key
     level: int  # upstream/downstream distance from current resource
     source: str  # database this resource is from
-    badges: Optional[List[str]]
+    badges: Optional[List[Badge]]
     usage: Optional[int]  # statistic to sort lineage items by
 
 
