@@ -32,7 +32,6 @@ class Lineage:
     lineage_entities_downstream: List[LineageItem]  # list of downstream entities
 
 
-
 class LineageSchema(AttrsSchema):
     target = Lineage
     register_as_scheme = True
