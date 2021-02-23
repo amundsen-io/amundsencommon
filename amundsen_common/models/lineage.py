@@ -28,8 +28,8 @@ class Lineage:
     key: str  # current table/col/task key
     direction: str  # upstream/downstream/both
     depth: int  # how many levels up/down 0 == all
-    lineage_entities_upstream: List[LineageItem]  # list of upstream entities
-    lineage_entities_downstream: List[LineageItem]  # list of downstream entities
+    upstream_entities: List[LineageItem]  # list of upstream entities
+    downstream_entities: List[LineageItem]  # list of downstream entities
 
 
 class LineageSchema(AttrsSchema):
