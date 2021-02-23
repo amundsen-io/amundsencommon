@@ -14,8 +14,8 @@ class LineageItem:
     key: str  # down/upstream table/col/task key
     level: int  # upstream/downstream distance from current resource
     source: str  # database this resource is from
-    badges: Optional[List[Badge]]
-    usage: Optional[int]  # statistic to sort lineage items by
+    badges: Optional[List[Badge]] = None
+    usage: Optional[int] = None  # statistic to sort lineage items by
 
 
 class LineageItemSchema(AttrsSchema):
@@ -26,9 +26,11 @@ class LineageItemSchema(AttrsSchema):
 @attr.s(auto_attribs=True, kw_only=True)
 class Lineage:
     key: str  # current table/col/task key
-    direction: str  # upstream/downstream
+    direction: str  # upstream/downstream/both
     depth: int  # how many levels up/down 0 == all
-    lineage_entities: List[LineageItem]  # list of up/downstream entities
+    lineage_entities_upstream: List[LineageItem]  # list of upstream entities
+    lineage_entities_downstream: List[LineageItem]  # list of downstream entities
+
 
 
 class LineageSchema(AttrsSchema):
