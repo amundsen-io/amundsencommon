@@ -13,7 +13,7 @@ jobs:
       - name: 'Install dependencies'
         run: pip install -r requirements.txt
       - name: 'Install project'
-        run: python setup.py install
+        run: pip install .
       - name: 'Run tests'
         run: make test_unit
   codecov:
