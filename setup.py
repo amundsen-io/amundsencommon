@@ -15,6 +15,14 @@ setup(
     maintainer='Amundsen TSC',
     maintainer_email='amundsen-tsc@lists.lfai.foundation',
     packages=find_packages(exclude=['tests*']),
+    # pip ignores dependency_links and only installs the `marshmallow-annotations @ ...` requirement
+    # specified in install_requires. Unfortunately easy_install which is invoked by `python setup.py install`
+    # does the opposite. For this reason we include this private fork in both sections so both easy_install and
+    # pip pick this up.
+    dependency_links=[
+        ('git+https://www.github.com/hilearn/marshmallow-annotations.git@a7a2dc96932430369bd'
+         'ef36555082df990ed9bef#egg=marshmallow-annotations')
+    ],
     install_requires=[
         # Packages in here should rarely be pinned. This is because these
         # packages (at the specified version) are required for project
@@ -34,7 +42,7 @@ setup(
         'Flask>=1.0.2',
         'attrs>=19.0.0',
         'marshmallow>=3.0,<=3.6',
-        'marshmallow-annotations @ git+https://www.github.com/hilearn/marshmallow-annotations.git@a7a2dc96932430369bdef36555082df990ed9bef#egg=marshmallow-annotations-2.4.0.post1'
+        'marshmallow-annotations @ git+https://www.github.com/hilearn/marshmallow-annotations.git@a7a2dc96932430369bdef36555082df990ed9bef#egg=marshmallow-annotations'
     ],
     python_requires=">=3.6",
     package_data={'amundsen_common': ['py.typed']},
