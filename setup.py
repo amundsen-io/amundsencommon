@@ -41,8 +41,8 @@ setup(
         # and less than 2.x installed.
         'Flask>=1.0.2',
         'attrs>=19.0.0',
-        'marshmallow>=3.0,<=3.6',
-        'marshmallow-annotations @ git+https://www.github.com/hilearn/marshmallow-annotations.git@a7a2dc96932430369bdef36555082df990ed9bef#egg=marshmallow-annotations'  # noqa
+        'marshmallow<3.0',
+        'marshmallow-annotations==2.4.0'
     ],
     python_requires=">=3.6",
     package_data={'amundsen_common': ['py.typed']},
