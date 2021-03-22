@@ -41,8 +41,8 @@ setup(
         # and less than 2.x installed.
         'Flask>=1.0.2',
         'attrs>=19.0.0',
-        'marshmallow<3.0',
-        'marshmallow-annotations==2.4.0'
+        'marshmallow>=2.15.3,<3.0',
+        'marshmallow-annotations>=2.4.0,<3.0'
     ],
     python_requires=">=3.6",
     package_data={'amundsen_common': ['py.typed']},
