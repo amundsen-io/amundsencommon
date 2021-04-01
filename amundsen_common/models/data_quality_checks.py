@@ -6,13 +6,13 @@ from marshmallow3_annotations.ext.attrs import AttrsSchema
 
 
 @attr.s(auto_attribs=True, kw_only=True)
-class TableQualityChecksSummary:
-    num_passing_checks: int = attr.ib()
-    num_total_checks: int = attr.ib()
-    last_run_timestamp: int = attr.ib()
+class TableQualityCheck:
+    check_id: str = attr.ib()
+    last_execution_status: str = attr.ib()
+    last_execution_timestamp: int = attr.ib()
 
 
-class TableQualityChecksSummarySchema(AttrsSchema):
+class TableQualityCheckSchema(AttrsSchema):
     class Meta:
-        target = TableQualityChecksSummary
+        target = TableQualityCheck
         register_as_scheme = True
