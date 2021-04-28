@@ -1,3 +1,7 @@
+# Deprecated: please visit https://github.com/amundsen-io/amundsen/tree/main/common
+
+The Amundsen project [moved to a monorepo](https://github.com/amundsen-io/rfcs/pull/31). This repository will be kept up temporarily to allow users to transition gracefully, but new PRs won't be accepted.
+
 # Amundsen Common
 [![PyPI version](https://badge.fury.io/py/amundsen-common.svg)](https://badge.fury.io/py/amundsen-common)
 [![License](http://img.shields.io/:license-Apache%202-blue.svg)](LICENSE)
